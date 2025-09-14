@@ -1,0 +1,53 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Virtual environment
+backend/venv/
+env/
+venv/
+*.pyc
+__pycache__/
+
+# Node.js dependencies and build output
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.env
+frontend/.env.local
+frontend/.env.development
+frontend/.env.production
+
+# Backend specific
+backend/*.log
+backend/*.pdf
+backend/.env
+backend/__pycache__/
+backend/dummy_pdf_test
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# MongoDB data (local storage)
+*.mongod.lock
+data/
+db/
+
+# System files
+*.swp
+*.swo
+
+# Dependency lock files (optional, keep if using exact versions)
+# Uncomment if you want to ignore these:
+# package-lock.json
+# poetry.lock
+# Pipfile.lock
+
+# MacOS specific
+*.DS_Store
+
+# Hugging Face model caches
+~/.cache/huggingface/

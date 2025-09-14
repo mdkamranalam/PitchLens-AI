@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+pymongo
+python-multipart
+python-dotenv
+transformers
+PyPDF2
+reportlab
+torch
+faker
