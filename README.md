@@ -1,6 +1,6 @@
-# PitchLens
+# PitchLens-AI
 
-PitchLens is a full-stack web application that analyzes startup pitch decks and generates actionable insights for venture capitalists. It extracts key sections (Team, Market, Product/Traction) from uploaded PDFs, enriches them with dummy public data, and uses AI to produce detailed analyses (summary, SWOT, risks).
+PitchLens-AI is a full-stack web application that analyzes startup pitch decks and generates actionable insights for venture capitalists. It extracts key sections (Team, Market, Product/Traction) from uploaded PDFs, enriches them with dummy public data, and uses AI to produce detailed analyses (summary, SWOT, risks).
 
 ## Tech Stack
 
