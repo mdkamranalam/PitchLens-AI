@@ -6,7 +6,7 @@ PitchLens-AI is a full-stack web application that analyzes startup pitch decks a
 - **Frontend**: ReactJS
 - **Backend**: FastAPI (Python)
 - **Database**: MongoDB
-- **AI**: Hugging Face model
+- **AI**: Hugging Face (BART for summarization, DistilGPT-2 for risk generation)
 
 ## Setup Instructions
 1. **Frontend**:
@@ -20,8 +20,3 @@ PitchLens-AI is a full-stack web application that analyzes startup pitch decks a
 3. **Database**:
    - Ensure MongoDB is running locally or via a cloud service.
    - Set `MONGO_URI` in `backend/.env`.
-
-## Next Steps
-- Configure API endpoints.
-- Implement frontend components.
-- Integrate AI model for analysis.
