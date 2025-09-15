@@ -12,20 +12,25 @@ from src.utils.data_fetch import enrich_data
 from src.utils.hf_utils import analyze_pitch
 import uuid
 import logging
+import certifi
 
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.FileHandler("backend.log"),
-        logging.StreamHandler()
-    ]
+    handlers=[logging.FileHandler("backend.log"), logging.StreamHandler()]
 )
 logger = logging.getLogger(__name__)
 
 # Load environment variables
 load_dotenv()
+
+# Validate environment variables
+required_envs = ["MONGO_URI", "FRONTEND_URL"]
+missing_envs = [env for env in required_envs if not os.getenv(env)]
+if missing_envs:
+    logger.error(f"Missing environment variables: {missing_envs}")
+    raise ValueError(f"Missing required environment variables: {missing_envs}")
 
 # Initialize FastAPI
 app = FastAPI(title="PitchLens API")
@@ -39,12 +44,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# MongoDB setup
+# MongoDB setup with custom certificate
 mongo_uri = os.getenv("MONGO_URI")
-if not mongo_uri:
-    logger.error("MONGO_URI not set in environment variables")
-    raise ValueError("MONGO_URI not set in environment variables")
-client = MongoClient(mongo_uri)
+client = MongoClient(mongo_uri, tlsCAFile=certifi.where())
 db = client["pitchlens"]
 pitches_collection = db["pitches"]
 
